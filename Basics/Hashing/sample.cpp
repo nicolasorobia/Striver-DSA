@@ -21,9 +21,9 @@ int main() {
     }
 
     // iterate over the map:
-    // for(auto it : mp) {
-    //     cout << it.first << "->" << it.second << endl;
-    // }
+    for(auto it : mp) {
+        cout << it.first << "->" << it.second << endl;
+    }
     
     int q;
     cout << "How many numbers do you want to search in query: "; cin >> q;
