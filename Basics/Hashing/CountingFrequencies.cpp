@@ -9,7 +9,7 @@ vector<vector<int>> countFrequencies(vector<int>& nums) {
     vector<vector<int>> result;
 
     for (int i : nums) {
-        mp[nums[i]]++;
+        mp[i]++;
     }
 
     for (auto& [num, freq]: mp) {
@@ -25,10 +25,8 @@ int main() {
 
     vector<vector<int>> ans = countFrequencies(nums);
 
-    for (size_t i = 0; i < ans.size(); i++) {
-        for (size_t j = 0; j < ans.at(i); j++) {
-            
-        }
+    for (auto& row: ans) {
+        cout << "[" << row[0] << " -> " << row[1] << "]" << endl;
     }
 
     return 0;
