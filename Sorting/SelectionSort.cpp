@@ -3,23 +3,22 @@
 using namespace std;
 
 vector<int> selectionSort(vector<int>& nums) {
-    vector<int> result = nums;
 
-    for (size_t i = 0; i < result.size(); i++) {
+    for (size_t i = 0; i < nums.size(); i++) {
         int minIndex = i;
 
-        for (size_t j = i + 1; j < result.size(); j++) {
-            if(result[j] < result[minIndex]) {
+        for (size_t j = i + 1; j < nums.size(); j++) {
+            if (nums[j] < nums[minIndex]) {
                 minIndex = j;
             }
         }
-        
-        int temp = result[minIndex];
-        result[minIndex] = result[i];
-        result[i] = temp;
+
+        int temp = nums[minIndex];
+        nums[minIndex] = nums[i];
+        nums[i] = temp;
     }
 
-    return result;
+    return nums;
 }
 
 int main() {

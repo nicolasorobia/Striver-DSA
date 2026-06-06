@@ -4,17 +4,16 @@
 using namespace std;
 
 vector<int> bubbleSort(vector<int>& nums) {
-    vector<int> result = nums;
 
     for (size_t i = nums.size() - 1; i > 0; i--) {
         for (size_t j = 0; j < i; j++) {
-            if (result[j] > result[j + 1]) {
-                swap(result[j], result[j + 1]);
+            if (nums[j] > nums[j + 1]) {
+                swap(nums[j], nums[j + 1]);
             }
         }
     }
 
-    return result;
+    return nums;
 }
 
 int main() {
