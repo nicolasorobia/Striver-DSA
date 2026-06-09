@@ -35,7 +35,7 @@ void merge(vector<int>& leftVec, vector<int>& rightVec, vector<int>& nums) {
     }
 }
 
-void mergeSortHelper(vector<int>& nums) {
+void mergeSortRecursion(vector<int>& nums) {
     int n = nums.size();
 
     if (n <= 1) return; // base case
@@ -56,20 +56,20 @@ void mergeSortHelper(vector<int>& nums) {
             j++;
         }
     }
-    mergeSortHelper(leftVec);
-    mergeSortHelper(rightVec);
+    mergeSortRecursion(leftVec);
+    mergeSortRecursion(rightVec);
     merge(leftVec, rightVec, nums);
 }
 
 vector<int> mergeSort(vector<int>& nums) {
-    mergeSortHelper(nums);
+    mergeSortRecursion(nums);
     return nums;
 }
 
 
 int main() {
 
-    vector<int> nums {8,2,5,3,4,7,6,1};
+    vector<int> nums {7,4,1,5,3};
 
     vector<int> ans = mergeSort(nums);
 
