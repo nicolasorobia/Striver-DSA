@@ -2,6 +2,8 @@
 #include <vector>
 using namespace std;
 
+// TC: O(nlogn), SC: O(nlogn)
+
 void merge(vector<int>& leftVec, vector<int>& rightVec, vector<int>& nums) {
     int leftSize = leftVec.size();
     int rightSize = rightVec.size();
