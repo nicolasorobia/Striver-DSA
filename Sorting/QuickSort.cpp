@@ -2,30 +2,49 @@
 #include <vector>
 using namespace std;
 
-void placePivot(vector<int>& nums, int left, int right) {
-    int pivot = nums[left];
 
-    int i = left, j = right;
 
-    while ( i < j) {
-        while (nums[i] < nums[pivot] && )
+void quickSort(vector<int>& nums, int low, int high) {
+    if (low >= high) return; // base case
+
+    int start = low;
+    int end = high;
+    int mid = start + (end - start) / 2;
+    int pivot = nums[mid];
+
+    while (start <= end) {
+        while (nums[start] < pivot) start++;
+        while (nums[end]   > pivot) end--;
+
+        if (start <= end) {
+            swap(nums[start], nums[end]);
+            start++;
+            end--;
+        }
     }
+
+    quickSort(nums, low, end);
+    quickSort(nums, start, high);
 }
 
-vector<int> quickSortRecursion(vector<int>& nums, int left, int right) {
-
+vector<int> sort(vector<int>& nums) {
+    quickSort(nums, 0, nums.size() - 1);
+    return nums;
 }
 
-vector<int> quickSort(vector<int>& nums) {
-    // place pivot in correct location
 
-}
 
 int main() {
 
     vector<int> nums {7,4,1,5,3};
 
-    vector<int> ans = quickSort(nums);
+    // quickSort(nums, 0, nums.size() - 1);
+
+    // for (auto& num: nums) {
+    //     cout << num << " ";
+    // }
+
+    vector<int> ans = sort(nums);
 
     for (auto& num: ans) {
         cout << num << " ";
