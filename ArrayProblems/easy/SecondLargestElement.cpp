@@ -8,8 +8,8 @@ int secondLargestElement(vector<int>& nums) {
     // check if vector is empty first
     if (nums.empty()) return  -1;
 
-    int max = INT_MIN;
-    int second_max = INT_MIN;
+    int max = 0;
+    int second_max = 0;
     for (int i = 0; i < nums.size(); i++) {
         if (nums[i] > max) {
             second_max = max;
@@ -20,7 +20,7 @@ int secondLargestElement(vector<int>& nums) {
     }
 
     // check if second largest element was found and assigned
-    if (second_max == INT_MIN) return - 1;
+    if (second_max == 0) return - 1;
 
     return second_max;
 }
