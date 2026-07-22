@@ -7,7 +7,7 @@
 
 This repository serves as a testing ground for solving Data Structures and Algorithms problems while working through [Striver's A2Z DSA Course](https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/).
 
-Each file contains a self-contained solution to a specific problem, written and tested in C++. The goal is to build a strong conceptual understanding of core DSA patterns — recursion, hashing, prefix sums, two-pointer techniques, sorting, and searching — rather than memorizing solutions. Emphasis is placed on understanding *why* each approach works, analyzing time and space complexity, and progressing from brute-force implementations toward optimal ones.
+Each file contains a self-contained solution to a specific problem, written and tested in C++. The goal is to build a strong conceptual understanding of core DSA patterns. Emphasis is placed on understanding *why* each approach works, analyzing time and space complexity, and progressing from brute-force implementations toward optimal ones.
 
 
 ## Structure
