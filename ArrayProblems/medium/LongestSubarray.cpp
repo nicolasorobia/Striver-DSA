@@ -5,7 +5,7 @@
 
 int bruteForce(std::vector<int>& nums, int k) {
     // answer key brute force approach
-    // TC: O(n^3), SC: O(1)
+    // TC: O(n^2), SC: O(1)
     int n = nums.size();
     int ans = 0;
     
