@@ -9,8 +9,8 @@ int longestConsecutive(std::vector<int>& nums) {
 
     // std::sort(nums.begin(), nums.end());
     
-    int n = nums.size();
-    int count = 1;
+    // int n = nums.size();
+    // int count = 1;
     int longestStreak = 1;
     // for (int i = 0; i < n - 1; ++i) {
     //     if (nums[i + 1] == nums[i] + 1) {
@@ -22,6 +22,9 @@ int longestConsecutive(std::vector<int>& nums) {
     //         count = 1;
     //     }
     // }
+
+
+    // Optimal - TC: O(n), SC: O(1)
 
     std::unordered_set<int> mySet(nums.begin(), nums.end());
 
