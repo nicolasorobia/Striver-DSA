@@ -12,18 +12,25 @@ void setZeroes(std::vector<std::vector<int>>& matrix) {
     for (int i = 0; i < row; i++)
     {
        if (matrix[i][0] == 0)
+       {
             colZero = true;
+            break;
+       }
+            
     }
 
     for (int j = 0; j < col; j++)
     {
        if (matrix[0][j] == 0)
-            rowZero = true;
+       {
+            row = true;
+            break;
+       }
     }
 
 
-    // Step 2: check if row 1 and col 1 needs to be zeroed
-    // these place markers on row 0 and col 0 if zeroes are found inside the borders of the matrix
+    // Step 2: find zeroes inside matrix and place markers on them
+    // these place markers on the bordering rows and cols if zeroes are found inside the borders of the matrix
     // hence why this check is separate from step 1
     for (int i = 1; i < row; i++)
     {
@@ -31,27 +38,36 @@ void setZeroes(std::vector<std::vector<int>>& matrix) {
         {
             if (matrix[i][j] == 0)
             {
-                matrix[i][0] == 0;
-                matrix[0][j] == 0;
+                matrix[i][0] = 0;
+                matrix[0][j] = 0;
             }
         }
     }
 
-    // Step 3: set zeroes in matrix where the markers are placed
+    // Step 3: set zeroes in matrix where the markers were placed from step 2
     for (int i = 1; i < row; i++)
     {
         for (int j = 1; j < col; j++)
         {
             if (matrix[i][0] == 0 || matrix[0][j] == 0)
             {
-                matrix[i][j] == 0;
+                matrix[i][j] = 0;
             }
         }
     }
 
-    
+    // Step 4: Place zeroes in row 0 and col 0 if needed based on the check from step 1
+    if (rowZero) {
+        for (int j = 0; j < col; j++) {
+            matrix[0][j] = 0;
+        }
+    }
 
-   
+    if (colZero) {
+        for (int i = 0; i < row; i++) {
+            matrix[i][0] = 0;
+        }
+    }
 
 }
 
@@ -65,12 +81,12 @@ int main() {
 
     setZeroes(matrix1);
 
-    for (size_t row = 0; row < matrix1.size(); row++) {
-        for (size_t col = 0; col < matrix1[row].size(); col++) {
-            std::cout << matrix1[row][col] << " ";
+   for (auto& row: matrix1) {
+        for (auto num: row) {
+            std::cout << num << " ";
         }
-        std::cout << "\n";
-    }
+        std::cout<< "\n";
+   }
 
     return 0;
 }
