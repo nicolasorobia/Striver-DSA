@@ -23,7 +23,7 @@ void setZeroes(std::vector<std::vector<int>>& matrix) {
     {
        if (matrix[0][j] == 0)
        {
-            row = true;
+            rowZero = true;
             break;
        }
     }
@@ -73,10 +73,14 @@ void setZeroes(std::vector<std::vector<int>>& matrix) {
 
 int main() {
 
+    // std::vector<std::vector<int>> matrix1 {
+    //     {1, 1, 1},
+    //     {1, 0, 1},
+    //     {1, 1, 1}
+    // };
+
     std::vector<std::vector<int>> matrix1 {
-        {1, 1, 1},
-        {1, 0, 1},
-        {1, 1, 1}
+        {1, 0, 3}
     };
 
     setZeroes(matrix1);
